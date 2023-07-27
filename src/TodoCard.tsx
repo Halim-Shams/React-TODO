@@ -12,7 +12,7 @@ const TodoCard = ({number, todo}: Props) => {
 				<p className='group-hover/todo:text-yellow-500 font-mono text-yellow-500/50 text-3xl font-bold transition selection:bg-emerald-400'>
 					{number}.
 				</p>
-				<p className='font-mono text-[1.4rem] text-gray-800 selection:bg-emerald-200'>
+				<p className='font-mono first-letter:capitalize text-[1.4rem] text-gray-800 selection:bg-emerald-200'>
 					{todo}
 				</p>
 			</div>

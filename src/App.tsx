@@ -3,11 +3,11 @@ import Form from './Form';
 import TodoList from './TodoList';
 
 function App() {
-	const todos = [
-		{num: 1, todo: 'Take the dog out.'},
-		{num: 2, todo: 'Let em pee.'},
-		{num: 3, todo: 'Bring em back to house.'},
-	];
+	const [todos, setTodos] = useState([{num: 1, todo: 'Take the dog out.'}]);
+
+	const onTodoAdd = (data: any) => {
+		setTodos([{todo: data, num: todos.length + 1}, ...todos]);
+	};
 
 	return (
 		<div className='w-8/12 mx-auto flex flex-col gap-12 items-center py-8'>
@@ -19,7 +19,7 @@ function App() {
 				List 🪶
 			</p>
 			<div className='flex flex-col gap-14 w-full'>
-				<Form />
+				<Form onAdd={(d) => onTodoAdd(d)} />
 				<TodoList todos={todos} />
 			</div>
 		</div>
