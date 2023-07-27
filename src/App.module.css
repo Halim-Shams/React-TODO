@@ -1,0 +1,16 @@
+.todo__input {
+	border: 1px solid #aeaeae;
+	padding: 2px 12px;
+	border-radius: 3px;
+	outline: none;
+}
+
+.form__button {
+	background-color: orange;
+	padding: 2px 16px;
+	font-size: 1rem;
+	font-weight: 500;
+	outline: none;
+	border-radius: 3px;
+	margin-bottom: 2rem;
+}
