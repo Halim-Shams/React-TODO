@@ -4,6 +4,35 @@ interface Props {
 	onAdd: (Data: string) => void;
 }
 
+const funTodos = [
+	'Grab the milk',
+	'Take the dog out',
+	'Wash the dishes',
+	'Watch an Episode',
+	'Watch a movie',
+	'Go for a walk',
+	'Meet my grandparents',
+	'Read the book',
+	'Write something down',
+	'Publish a video',
+	'Code',
+	'Prayer',
+	'Meditation',
+	'Go to GYM',
+	'Take the vitamins',
+	'Take Creatine',
+	'Take Protien',
+	'Drink water',
+	'Go for a juggle',
+	'Nap',
+	'Go to bed',
+	'Brush teeth',
+	'Cold shower',
+];
+
+const randomNumber = Math.trunc(Math.random() * funTodos.length);
+const randomPlaceholder = `${funTodos[randomNumber]}...`;
+
 const Form = ({onAdd}: Props) => {
 	const todoRef = useRef<any>(null);
 
@@ -20,7 +49,7 @@ const Form = ({onAdd}: Props) => {
 				ref={todoRef}
 				type='text'
 				className='outline-none border py-2 px-5 w-9/12 rounded-md text-2xl font-mono focus:border-yellow-500'
-				placeholder='Grab the milk...'
+				placeholder={randomPlaceholder}
 			/>
 			<button
 				onClick={add}
