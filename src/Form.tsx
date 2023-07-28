@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 
 interface Props {
 	onAdd: (Data: string) => void;
@@ -30,16 +30,18 @@ const funTodos = [
 	'Cold shower',
 ];
 
-const randomNumber = Math.trunc(Math.random() * funTodos.length);
-const randomPlaceholder = `${funTodos[randomNumber]}...`;
-
 const Form = ({onAdd}: Props) => {
+	const randomNumber = Math.trunc(Math.random() * funTodos.length);
+	const randomPlaceholder = `${funTodos[randomNumber]}...`;
+
 	const todoRef = useRef<any>(null);
+	const [placeholder, setPlaceholder] = useState(randomPlaceholder);
 
 	const add = (e: any) => {
 		e.preventDefault();
 		onAdd(todoRef.current.value);
 		todoRef.current.value = '';
+		setPlaceholder(randomPlaceholder);
 	};
 
 	return (
@@ -49,7 +51,7 @@ const Form = ({onAdd}: Props) => {
 				ref={todoRef}
 				type='text'
 				className='outline-none border py-2 px-5 w-9/12 rounded-md text-2xl font-mono focus:border-yellow-500'
-				placeholder={randomPlaceholder}
+				placeholder={placeholder}
 			/>
 			<button
 				onClick={add}

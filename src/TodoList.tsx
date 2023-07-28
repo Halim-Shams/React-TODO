@@ -16,7 +16,7 @@ const TodoList = ({todos, removeTodo}: Props) => {
 	};
 
 	return (
-		<div className='px-20 space-y-4'>
+		<div className='pl-[4.5rem] space-y-4'>
 			{todos.map((item) => (
 				<TodoCard
 					onCheck={() => removeTODO(item.num)}
