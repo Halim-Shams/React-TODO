@@ -14,7 +14,7 @@ function App() {
 	};
 
 	return (
-		<div className='w-8/12 mx-auto flex flex-col gap-12 items-center py-8'>
+		<div className='w-8/12 mx-auto flex flex-col gap-12 items-center py-8 relative'>
 			<p className='text-3xl text-emerald-400 text-center font-bold'>
 				A{' '}
 				<span className='text-yellow-500 underline decoration-wavy font-mono decoration-emerald-400 text-4xl'>
@@ -29,6 +29,9 @@ function App() {
 					todos={todos}
 				/>
 			</div>
+			<p className='font-mono selection:bg-yellow-500 font-thin cursor-none hover:text-gray-800 text-gray-500 fixed text-sm bottom-4'>
+				Developed with 🧠 by Halim Shams
+			</p>
 		</div>
 	);
 }
