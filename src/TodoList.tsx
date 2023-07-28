@@ -7,13 +7,23 @@ interface Todo {
 
 interface Props {
 	todos: Todo[];
+	removeTodo: (id: number) => void;
 }
 
-const TodoList = ({todos}: Props) => {
+const TodoList = ({todos, removeTodo}: Props) => {
+	const removeTODO = (id: number) => {
+		removeTodo(id);
+	};
+
 	return (
 		<div className='px-20 space-y-4'>
 			{todos.map((item) => (
-				<TodoCard number={item.num} todo={item.todo} />
+				<TodoCard
+					onCheck={() => removeTODO(item.num)}
+					key={item.num}
+					number={item.num}
+					todo={item.todo}
+				/>
 			))}
 		</div>
 	);
