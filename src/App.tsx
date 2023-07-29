@@ -9,10 +9,6 @@ function App() {
 		setTodos([{todo: data, num: todos.length + 1}, ...todos]);
 	};
 
-	const onToDoCheck = () => {
-		console.log('removed');
-	};
-
 	return (
 		<div className='w-8/12 mx-auto flex flex-col gap-12 items-center py-8 relative'>
 			<p className='text-3xl text-emerald-400 text-center font-bold'>
